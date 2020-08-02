@@ -5,7 +5,7 @@ At a very high level we let nginx listen on port 80 and send all requests to tom
 tomcat do the virtual hosting thereby handling the processing of requests to cbills.com, mycardrooms.com and nyteout.com
 
 Here is how this works.
-within the nginx.conf we have this
+within the [nginx.conf](https://github.com/GitHubsberg/nginx-tomcat/blob/master/nginx.conf) we have 
 ```
          location / {
             proxy_set_header X-Forwarded-Host $host;
@@ -15,7 +15,7 @@ within the nginx.conf we have this
             proxy_pass http://127.0.0.1:8080/;
          }
 ```
-here we are telling nginx to proxy_pass all requests to "/" for all requests to Tomcat.
+essentially we are telling nginx to proxy_pass all requests to Tomcat. 
 
 Now on the tomcat side we have in server.xml a definition for every virtual host we will handle. If you look
 at `Server/Service/Engine` you will see definitions for four different hosts. Lets look at one of those:
@@ -38,5 +38,5 @@ at `Server/Service/Engine` you will see definitions for four different hosts. Le
 
 notice how we specify the Host name to be `cbills.com` and set its appBase to `"webapps/cbills.com"`. The web app (war file) is deployed
 under the directory `${TOMCAT_HOME}/webapps/cbills.com/ROOT/` where `TOMCAT_HOME` is the directory where your tomcat is deployed. You will 
-need to create a `cbilss.com/ROOT/` directory under webapps and place the contents of the web app war file there. If you want to use the
+need to create a `cbills.com/ROOT/` directory under webapps and place the contents of the web app war file there. If you want to use the
 `.war` format, just rename it to ROOT.war and place it under `${TOMCAT_HOME}/webapps/cbills.com`
