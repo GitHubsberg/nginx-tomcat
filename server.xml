@@ -43,7 +43,7 @@
             autoDeploy="true">
         <Valve className="org.apache.catalina.valves.RemoteIpValve" />    
         <Valve className="org.apache.catalina.valves.AccessLogValve" 
-        	   directory="logs"
+               directory="logs"
                prefix="cbills_access_log" 
                suffix=".txt"
                buffered="false"
@@ -56,7 +56,7 @@
             unpackWARs="true" 
             autoDeploy="true">
         <Valve className="org.apache.catalina.valves.AccessLogValve" 
-        	   directory="logs"
+               directory="logs"
                prefix="mycardrooms_access_log" 
                suffix=".txt"
                buffered="false"
@@ -69,7 +69,7 @@
             unpackWARs="true" 
             autoDeploy="true">
         <Valve className="org.apache.catalina.valves.AccessLogValve" 
-        	   directory="logs"
+               directory="logs"
                prefix="nyteout_access_log" 
                suffix=".txt"
                 buffered="false"
@@ -82,7 +82,7 @@
             unpackWARs="true" 
             autoDeploy="true">
         <Valve className="org.apache.catalina.valves.AccessLogValve" 
-        	   directory="logs"
+               directory="logs"
                prefix="xygride_access_log" 
                suffix=".txt"
                 buffered="false"
